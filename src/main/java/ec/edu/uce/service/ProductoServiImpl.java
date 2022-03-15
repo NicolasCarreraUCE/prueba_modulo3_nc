@@ -36,4 +36,16 @@ public class ProductoServiImpl implements IProductoServi {
 		this.productoRepo.borrarProducto(id);
 	}
 
+	@Override
+	public Producto buscarProductoPorNombre(String nombre) {
+		// TODO Auto-generated method stub
+		return this.productoRepo.buscarProductoPorNombre(nombre);
+	}
+
+	@Override
+	public Producto buscarProductoPorCodigoDeBarra(String codigoDeBarra) {
+		// TODO Auto-generated method stub
+		return this.productoRepo.buscarProductoPorCodigoDeBarra(codigoDeBarra);
+	} 
+
 }

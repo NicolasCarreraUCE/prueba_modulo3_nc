@@ -27,6 +27,9 @@ public class Producto {
 	@Column(name = "prod_codigo_barras")
 	private String codigoDeBarras;
 	
+	@Column(name = "prod_nombre")
+	private String nombre;
+	
 	@Column(name = "prod_categoria")
 	private String categoria;
 	
@@ -86,6 +89,14 @@ public class Producto {
 
 	public void setDetalleVentas(List<DetalleVenta> detalleVentas) {
 		this.detalleVentas = detalleVentas;
+	}
+
+	public String getNombre() {
+		return nombre;
+	}
+
+	public void setNombre(String nombre) {
+		this.nombre = nombre;
 	}
 	
 }

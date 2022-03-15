@@ -7,4 +7,8 @@ public interface IProductoRepo {
 	Producto buscarProducto(Integer id);
 	void actualizarProducto(Producto producto);
 	void borrarProducto(Integer id);
+	
+	Producto buscarProductoPorNombre(String nombre);
+
+	Producto buscarProductoPorCodigoDeBarra(String codigoDeBarra);
 }

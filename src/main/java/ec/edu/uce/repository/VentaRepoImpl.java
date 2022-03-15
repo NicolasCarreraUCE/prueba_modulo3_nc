@@ -1,7 +1,11 @@
 package ec.edu.uce.repository;
 
+import java.time.LocalDateTime;
+import java.util.List;
+
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
+import javax.persistence.TypedQuery;
 import javax.transaction.Transactional;
 
 import org.springframework.stereotype.Repository;
@@ -38,5 +42,13 @@ public class VentaRepoImpl implements IVentaRepo {
 		// TODO Auto-generated method stub
 		this.entityManager.remove(this.buscarVenta(id));
 	}
+
+	@Override
+	public List<Venta> buscarVentaPorFecha(LocalDateTime fecha) {
+		// TODO Auto-generated method stub
+		TypedQuery<Venta> myQuery = this.entityManager.createQuery("SELECT c FROM Venta c WHERE c.fecha =:fecha", Venta.class);
+		myQuery.setParameter("fecha", fecha);
+		return myQuery.getResultList();
+	} 
 
 }
